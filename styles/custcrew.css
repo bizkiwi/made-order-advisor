@@ -1,0 +1,77 @@
+/* 
+"Made Order Advisor" ("M.O.A") by BizKiwi.NZ
+Copyright 2015 BizKiwi.NZ - steve.julian@orcon.net.nz
+*/
+
+{
+	box-sizing: border-box;
+    color:white;
+    padding:0vw;
+    margin:0vw;
+}
+
+body {
+	width:100vw;
+	height:100vh;
+    padding:0vw;
+    margin:0vw;
+	overflow-y:hidden;
+	background-color:white;
+	font-family: Tahoma, Geneva, sans-serif;
+    color:white;
+}
+
+html {
+	
+}
+
+.unbehaved-element {
+	font-size: 2em;
+}
+
+/*
+@media(max-width: 1920px) {
+	html {
+		font-size: 20px;	
+	}
+	.unbehaved-element {
+		font-size: 1.9em; 
+	}
+}
+
+@media(max-width: 1280px) {
+	html {
+		font-size: 16px;
+	}
+}
+*/
+
+h1 {
+	font-family: Tahoma, sans-serif;
+	font-size:36px;
+}
+
+h2 {
+	font-family: Tahoma, sans-serif;
+	font-size:30px;
+}
+
+h3 {
+	font-family: Tahoma, sans-serif;
+	font-size:24px;
+}
+
+h4 {
+	font-family: Tahoma, sans-serif;
+	font-size:18px;
+}
+
+h5 {
+	font-family: Tahoma, sans-serif;
+	font-size:14px;
+}
+
+h6 {
+	font-family: Tahoma, sans-serif;
+	font-size:12px;
+}

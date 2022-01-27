@@ -1,0 +1,532 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-nz">
+<head>
+    <title>Crew Display: Made Order Advisor (M.O.A)</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1" />
+
+	<!-- Made Order Advisor (M.O.A) by BizKiwi.NZ -->
+	<!-- Copyright 2015 BizKiwi.NZ - steve.julian@orcon.net.nz -->
+	
+	<link href="styles/bootstrap.css" rel="stylesheet"/>
+	<link href="styles/site.css" rel="stylesheet"/>
+	<link href="styles/crew.css" rel="stylesheet"/>
+	<link href="styles/custcrew.css" rel="stylesheet"/>
+
+	<script src="scripts/modernizr-2.8.3.js"></script>
+	<script src="scripts/jquery-2.1.4.js"></script>
+	<script src="scripts/jquery.validate.js"></script>
+	<script src="scripts/jquery.validate.unobtrusive.js"></script>
+
+	<script src="scripts/bootstrap.js"></script>
+	<script src="scripts/respond.js"></script>
+	<script src="scripts/cookies.js"></script>
+	<script src="scripts/custcrew.js"></script>
+	<script src="scripts/crew.js"></script>
+
+	<!-- apple touch icon -->
+	<link rel="icon" sizes="192x192" href="numpad/touch-icon-192x192.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="180x180" href="numpad/apple-touch-icon-180x180-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="numpad/apple-touch-icon-152x152-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="numpad/apple-touch-icon-120x120-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="numpad/apple-touch-icon-76x76-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="numpad/apple-touch-icon-72x72-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" href="numpad/apple-touch-icon-precomposed.png" />
+	<link href="numpad/vendor/css/normalize.css" media="screen,projection" type="text/css" rel="stylesheet" />
+	<!--<link href="/numpad/vendor/css/bootstrap.min.css" media="screen,projection" type="text/css" rel="stylesheet" />-->
+	<link href="numpad/vendor/css/font-awesome.min.css" media="screen,projection" type="text/css" rel="stylesheet" />
+	<link href="numpad/css/main.css" media="screen,projection" type="text/css" rel="stylesheet" />
+	<!--[if lte IE 8]>
+		<link href="/numpad/css/ie.css" media="screen, projection" type="text/css" rel="stylesheet" />
+	<![endif]-->
+	<link href="numpad/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+</head>
+<body id="bodytagcrew">
+<div id="maximiseformdiv" style="width:160px;height:80px;display:none;visibility:hidden;float:left;padding-left:10px;padding-right:0px;">
+    <form id="maximiseform">
+        <input type="button" id="maximisecrew" value="Maximise M.O.A" onmouseup="customerWindow.MaximiseCrewWindow();" style="height:46px;font-size:18px;padding:9px;" />
+    </form>
+</div>
+<div id="contentcrew">
+    <div id="crew-panel1">
+        <div id="crew-panel1-inner">
+            
+        </div>
+    </div>
+    <div id="crew-panel2">
+        <div id="crew-panel2-inner">
+            
+            <div id="crew-header">
+
+				<div id="product-brand" style="width:9vw;display:inline;float:left;padding-top:0;padding-left:0.85vw;">
+					<div id="product-brand-logo" style="height:52%;width:100%;float:left;padding-left:0;padding-top:2vh;color:white;background-color:red;">
+						<img src="images/kiwi/bizkiwi-logo.png" style="width:5vh;margin:auto;" />
+					</div>
+					<div style="height:48%;vertical-align:middle;text-align:center;width:100%;float:left;background-color:red;line-spacing:-1vh;color:white;font-weight:700;font-size:1.4vh;letter-spacing:0.1vh;padding-top:0.3vh;">
+						BizKiwi.NZ<br />
+						<span id="product-name" style="color:yellow;font-size:1.4vh;font-weight:700;letter-spacing:-0.01vh;">M.O.A</span>&nbsp;<span id="product-version" style="color:yellow;font-size:1.4vh;font-weight:700;">v 0.500</span>
+					</div>
+				</div>
+
+                <div id="crew-header-text-wrapper">
+                    <div id="crew-header-text">
+                        Orders waiting to be Collected
+                    </div>
+                    <div id="crew-header-arrow-down">
+                        <img id="arrow-down-image" src="images/arrow-down.png" />
+                    </div>
+					
+                </div>
+				
+            </div>
+            
+
+            <div id="crew-orders">
+
+                <div id="tile0" class="tileoff">
+                    <div id="orderbg0" class="orderbg" onclick="customerWindow.ToggleBoxVisibility('0');">
+                        <div id="notifyouter0" class="orderouter">
+                            <div id="notify0" class="order"></div>
+                        </div>
+                        <div id="timer0" class="timer">0:00</div>
+                    </div>
+                </div>
+
+                <div id="tile1" class="tileoff">
+                    <div id="orderbg1" class="orderbg" onclick="customerWindow.ToggleBoxVisibility('1');">
+                        <div id="notifyouter1" class="orderouter">
+                            <div id="notify1" class="order"></div>
+                        </div>
+                        <div id="timer1" class="timer">0:00</div>
+                    </div>
+                </div>
+
+                <div id="tile2" class="tileoff">
+                    <div id="orderbg2" class="orderbg" onclick="customerWindow.ToggleBoxVisibility('2');">
+                        <div id="notifyouter2" class="orderouter">
+                            <div id="notify2" class="order"></div>
+                        </div>
+                        <div id="timer2" class="timer">0:00</div>
+                    </div>
+                </div>
+
+                <div id="tile3" class="tileoff">
+                    <div id="orderbg3" class="orderbg" onclick="customerWindow.ToggleBoxVisibility('3');">
+                        <div id="notifyouter3" class="orderouter">
+                            <div id="notify3" class="order"></div>
+                        </div>
+                        <div id="timer3" class="timer">0:00</div>
+                    </div>
+                </div>
+
+                <div id="tile4" class="tileoff">
+                    <div id="orderbg4" class="orderbg" onclick="customerWindow.ToggleBoxVisibility('4');">
+                        <div id="notifyouter4" class="orderouter">
+                            <div id="notify4" class="order"></div>
+                        </div>
+                        <div id="timer4" class="timer">0:00</div>
+                    </div>
+                </div>
+
+                <div id="tile5" class="tileoff">
+                    <div id="orderbg5" class="orderbg" onclick="customerWindow.ToggleBoxVisibility('5');">
+                        <div id="notifyouter5" class="orderouter">
+                            <div id="notify5" class="order"></div>
+                        </div>
+                        <div id="timer5" class="timer">0:00</div>
+                    </div>
+                </div>
+
+                <div id="tile6" class="tileoff">
+                    <div id="orderbg6" class="orderbg" onclick="customerWindow.ToggleBoxVisibility('6');">
+                        <div id="notifyouter6" class="orderouter">
+                            <div id="notify6" class="order"></div>
+                        </div>
+                        <div id="timer6" class="timer">0:00</div>
+                    </div>
+                </div>
+
+                <div id="tile7" class="tileoff" onclick="customerWindow.ToggleBoxVisibility('7');">
+                    <div id="orderbg7" class="orderbg">
+                        <div id="notifyouter7" class="orderouter">
+                            <div id="notify7" class="order"></div>
+                        </div>
+                        <div id="timer7" class="timer">0:00</div>
+                    </div>
+                </div>
+
+                <div id="tile8" class="tileoff">
+                    <div id="orderbg8" class="orderbg" onclick="customerWindow.ToggleBoxVisibility('8');">
+                        <div id="notifyouter8" class="orderouter">
+                            <div id="notify8" class="order"></div>
+                        </div>
+                        <div id="timer8" class="timer">0:00</div>
+                    </div>
+                </div>
+
+                <div id="tile9" class="tileoff">
+                    <div id="orderbg9" class="orderbg" onclick="customerWindow.ToggleBoxVisibility('9');">
+                        <div id="notifyouter9" class="orderouter">
+                            <div id="notify9" class="order"></div>
+                        </div>
+                        <div id="timer9" class="timer">0:00</div>
+                    </div>
+                </div>
+
+                <div id="tile10" class="tileoff">
+                    <div id="orderbg10" class="orderbg" onclick="customerWindow.ToggleBoxVisibility('10');">
+                        <div id="notifyouter10" class="orderouter">
+                            <div id="notify10" class="order"></div>
+                        </div>
+                        <div id="timer10" class="timer">0:00</div>
+                    </div>
+                </div>
+
+                <div id="tile11" class="tileoff">
+                    <div id="orderbg11" class="orderbg" onclick="customerWindow.ToggleBoxVisibility('11');">
+                        <div id="notifyouter11" class="orderouter">
+                            <div id="notify11" class="order"></div>
+                        </div>
+                        <div id="timer11" class="timer">0:00</div>
+                    </div>
+                </div>
+
+                <div id="tile12" class="tileoff">
+                    <div id="orderbg12" class="orderbg" onclick="customerWindow.ToggleBoxVisibility('12');">
+                        <div id="notifyouter12" class="orderouter">
+                            <div id="notify12" class="order"></div>
+                        </div>
+                        <div id="timer12" class="timer">0:00</div>
+                    </div>
+                </div>
+
+                <div id="tile13" class="tileoff">
+                    <div id="orderbg13" class="orderbg" onclick="customerWindow.ToggleBoxVisibility('13');">
+                        <div id="notifyouter13" class="orderouter">
+                            <div id="notify13" class="order"></div>
+                        </div>
+                        <div id="timer13" class="timer">0:00</div>
+                    </div>
+                </div>
+
+                <div id="tile14" class="tileoff">
+                    <div id="orderbg14" class="orderbg" onclick="customerWindow.ToggleBoxVisibility('14');">
+                        <div id="notifyouter14" class="orderouter">
+                            <div id="notify14" class="order"></div>
+                        </div>
+                        <div id="timer14" class="timer">0:00</div>
+                    </div>
+                </div>
+
+                <div id="tile15" class="tileoff">
+                    <div id="orderbg15" class="orderbg" onclick="customerWindow.ToggleBoxVisibility('15');">
+                        <div id="notifyouter15" class="orderouter">
+                            <div id="notify15" class="order"></div>
+                        </div>
+                        <div id="timer15" class="timer">0:00</div>
+                    </div>
+                </div>
+
+                <div id="tile16" class="tileoff">
+                    <div id="orderbg16" class="orderbg" onclick="customerWindow.ToggleBoxVisibility('16');">
+                        <div id="notifyouter16" class="orderouter">
+                            <div id="notify16" class="order"></div>
+                        </div>
+                        <div id="timer16" class="timer">0:00</div>
+                    </div>
+                </div>
+
+                <div id="tile17" class="tileoff">
+                    <div id="orderbg17" class="orderbg" onclick="customerWindow.ToggleBoxVisibility('17');">
+                        <div id="notifyouter17" class="orderouter">
+                            <div id="notify17" class="order"></div>
+                        </div>
+                        <div id="timer17" class="timer">0:00</div>
+                    </div>
+                </div>
+
+            </div>
+            <div id="crew-footer" style="z-index:900;display:inline;padding-right:0;margin-right:0;padding-top:0;">
+                <div id="brands" style="float:left;display:inline;width:16vw;padding-left:1.6vh;">
+					<!--
+					<div id="product-brand" style="width:6.5vh;display:inline;float:left;padding-top:0;">
+						<div id="product-brand-logo" style="height:55%;width:100%;float:left;padding-top:1.45vh;color:white;background-color:red;">
+							<img src="images/kiwi/bizkiwi-logo.png" style="height:4.1vh;margin:auto;" />
+						</div>
+						<div style="height:45%;vertical-align:middle;text-align:center;width:100%;float:left;background-color:red;line-spacing:-1vh;color:white;font-weight:600;font-size:1vh;letter-spacing:0.1vh;padding-top:0.4vh;">
+							BizKiwi.NZ<br />
+							<span id="product-name" style="color:yellow;font-size:1vh;font-weight:600;letter-spacing:-0.01vh;">M.O.A</span>&nbsp;<span id="product-version" style="color:yellow;font-size:1vh;font-weight:500;">0.400</span>
+						</div>
+					</div>
+					-->
+					<div id="partner-brand" style="width:10.5vh;float:left;padding-top:0;">
+						<div id="partner-brand-logo" style="height:5.75vh;width:100%;padding-top:1.5vh;color:white;background-color:red;">
+							<img src="images/mcd-logo.png" style="height:3.8vh;" />
+						</div>
+						<div style="vertical-align:middle;text-align:center;width:100%;background-color:red;line-spacing:-1vh;color:white;font-weight:700;font-size:1.4vh;letter-spacing:0.04vh;padding-top:0.4vh;">
+							McDonald's<br />Nelson
+						</div>
+					</div>
+				</div>
+                <div style="width:32vw;float:left;">
+                        
+                    <div id="crew-text" style="width:12vw;float:left;text-align:right;padding-top:3vh;font-size:3vh;">
+                        Receipt #
+                    </div>
+                    <div id="crew-barcode" style="width:17vh;float:left;">
+                        <form id="barcodeform" name="barcodeform" onsubmit="return false;" action="">
+                            <input type="text" id="barcode" name="barcode" size="4" maxlength="4" style="color:#000000;width:15vh;max-width:90%;float:left;margin-left:1vh;margin-top:1vh;"
+                                    onkeyup="crewWindow.ScanChar('keyboard');"
+                                    onfocus="crewWindow.focusElement = 'barcode';"
+                                    onblur="crewWindow.focusElement = 'none';" onselect="crewWindow.focusElement = 'barcode';" class="number" />
+                        </form>
+                    </div>
+                    <div id="crew-barcode" style="width:7vh;display:inline;float:left;padding-top:1.9vh;padding-left:0.5vw;height:100%;">
+                        <a href="javascript:ToggleNumpad();" style="height:100%;color:black;font-weight:700;font-family:Arial, Helvetica, sans-serif;">
+                            <img src="images/keypad.png" style="height:6vh;width:6vh;margin-left:0;border-width:0.35vh;border-style:solid;border-color:black;border-radius:1.25vh;background-color:#eeeeee;" />
+                        </a>
+                    </div>
+                </div>
+
+                <div class=" navbar navbar-inverse navbar-fixed-bottom" style="position:relative;float:right;display:block;min-height:10vh;width:49vw;background-color:red;border-color:red;margin:0;padding:0;">
+
+					<div id="crew-spacer" style="float:left;width:0.25vw;">&nbsp;</div>
+					<div id="crew-clock" style="text-align:right;float:left;width:37vw;padding-top:2.75vh;"></div>
+				
+					<div class="navbar-header" style="min-height:10vh;padding-top:1.9vh;width:5vw;background-color:red;padding-left:0;padding-right:2.8vh;right:0vw;float:right;">	
+						<button id="crew-menu-button" type="button" data-toggle="collapse" data-target=".navbar-collapse" style="background-color:red;margin:auto;font-size:1.175vh;width:6vh;height:6vh;float:right;padding:0;border-width:0;" onclick="ToggleMenuIsOpen();">
+							<img src="images/menu.png" style="height:6vh;width:6vh;margin-left:0;border-width:0.35vh;border-style:solid;border-color:black;border-radius:1.25vh;background-color:#eeeeee;" />
+						</button>
+					</div>
+                    <div class="container" style="z-index:1000;background-color:red;width:100vw;padding:0;margin:0;padding-right:1vw;">
+                        <div id="navMenuContents" class="navbar-collapse collapse" style="background-color:white;z-index:1000;width:100%;">
+                            <ul id="navMenuContentsInner" class="nav navbar-nav" style="position:absolute;padding-top:0.6vh;padding-bottom:0.5vh;bottom:11vh;z-index:1000;background-color:white;border-color:red;border-width:0.5vh;border-style:solid;color:red;width:40vh;right:2.5vw;margin-right:2vw;">
+                                <li style="padding-bottom:0.5vh;">
+                                    <a href="javascript:ShowAboutBox();" style="color:black;font-weight:900;font-size:2.3vh;font-family:Arial, Helvetica, sans-serif;">
+                                        <img src="images/minimise.png" style="width:6vh;height:6vh;border-width:0.35vh;border-style:solid;border-color:black;border-radius:1.25vh;background-color:#eeeeee;"
+                                             id="minimisecrew" alt="About and Help" />
+                                        &nbsp;About and Help
+                                    </a>
+                                </li>
+                                <li style="padding-bottom:0.5vh;">
+                                    <a href="javascript:customerWindow.MinimiseCrewWindow();" style="color:black;font-weight:900;font-size:2.3vh;font-family:Arial, Helvetica, sans-serif;">
+                                        <img src="images/minimise.png" style="width:6vh;height:6vh;border-width:0.35vh;border-style:solid;border-color:black;border-radius:1.35vh;background-color:#eeeeee;"
+                                             id="minimisecrew" alt="Minimise Window" />
+                                        &nbsp;Minimise Window
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:MouseUpQuitMOA();" style="color:black;font-weight:900;font-size:2.3vh;font-family:Arial, Helvetica, sans-serif;">
+                                        <img src="images/exit.png" style="width:6vh;height:6vh;border-width:0.35vh;border-style:solid;border-color:black;border-radius:1.25vh;background-color:#eeeeee;"
+                                             id="closeall" alt="Quit Application" />
+                                        &nbsp;Quit Application
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>			
+                </div>
+				<div id="too-many-orders-box-container" style="z-index:1200;width:100vw;padding:0;margin:0;padding-right:1vw;visibility:hidden;display:none;">
+
+					<div id="too-many-orders-box-content" style="z-index:1200;position:absolute;width:80vw;height:60vh;right:10vw;bottom:20vh;background-color:white;border-color:black;border-width:15px;border-style:solid;border-radius:4.5vh;">
+						<div class="dialog-title" style="text-align:center;font-size:7.5vh;font-weight:700;vertical-align:middle;height:17.25vh;padding-top:5vh;">
+							TOO MANY ORDERS!
+						</div>
+						<div class="dialog-detail" style="text-align:center;font-size:4vh;font-weight:700;vertical-align:middle;line-height:9vh;">
+							There are too many Orders on the screen.<br />
+							Please remove one before adding another.
+						</div>
+						<div class="dialog-button" style="text-align:center;font-size:4vh;font-weight:700;vertical-align:middle;padding-top:4vh;">
+							<a href="javascript:CloseTooManyOrdersDialog();" style="a-hover:none;">
+								<div class="dialog-button-ok" style="color:white;font-weight:900;font-size:7vh;font-family:Arial, Helvetica, sans-serif;letter-spacing:0.07vh;width:20vw;height:12.5vh;padding-top:1vh;margin:auto;text-align:center;vertical-align:middle;background-color:green;border-color:black;border-width:5px;border-style:solid;border-radius:2.5vh;">
+										<!--<img src="images/exit.png" style="width:6vh;height:6vh;border-width:0.3vh;border-style:solid;border-color:black;border-radius:1.25vh;background-color:#eeeeee;" id="closeall" alt="Quit Application" />-->
+										OK
+								</div>
+							</a>
+						</div>						
+					</div>
+				
+				</div>
+				
+				<div id="duplicate-order-box-container" style="z-index:1200;width:100vw;padding:0;margin:0;padding-right:1vw;visibility:hidden;display:none;">
+					
+					<div id="duplicate-order-box-content" style="z-index:1200;position:absolute;width:80vw;height:60vh;right:10vw;bottom:20vh;background-color:white;border-color:black;border-width:15px;border-style:solid;border-radius:4.5vh;">
+						<div class="dialog-title" style="text-align:center;font-size:7.5vh;font-weight:700;vertical-align:middle;height:18vh;padding-top:5vh;">
+							DUPLICATE RECEIPT!
+						</div>
+						<div class="dialog-detail" style="text-align:center;font-size:4vh;font-weight:700;vertical-align:middle;line-height:9vh;">
+							This Receipt Number is already displayed!<br />
+						</div>
+						<div class="dialog-button" style="text-align:center;font-size:4vh;font-weight:700;vertical-align:middle;padding-top:6.5vh;">
+							<a href="javascript:DuplicateOrderDialog();" style="a-hover:none;">
+								<div class="dialog-button-ok" style="color:white;font-weight:900;font-size:7vh;font-family:Arial, Helvetica, sans-serif;letter-spacing:0.07vh;width:20vw;height:12.5vh;padding-top:1vh;margin:auto;text-align:center;vertical-align:middle;background-color:green;border-color:black;border-width:5px;border-style:solid;border-radius:2.5vh;">
+										<!--<img src="images/exit.png" style="width:6vh;height:6vh;border-width:0.3vh;border-style:solid;border-color:black;border-radius:1.25vh;background-color:#eeeeee;" id="closeall" alt="Quit Application" />-->
+										OK
+								</div>
+							</a>
+						</div>						
+					</div>
+					
+				</div>
+				
+				<div id="quit-box-container" style="z-index:1200;width:100vw;padding:0;margin:0;padding-right:1vw;visibility:hidden;display:none;">
+					
+					<div id="quit-box-content" style="z-index:1200;position:absolute;width:80vw;height:60vh;right:10vw;bottom:20vh;background-color:white;border-color:black;border-width:15px;border-style:solid;border-radius:4.5vh;">
+						<div class="dialog-title" style="text-align:center;font-size:7vh;font-weight:700;vertical-align:middle;height:16.5vh;padding-top:5vh;">
+							EXIT APPLICATION ?
+						</div>
+						<div class="dialog-detail" style="text-align:center;font-size:4vh;font-weight:700;vertical-align:middle;line-height:7.6vh;padding-top:0vh;">
+							This will EXIT "Made Order Advisor"<br />
+							Are you sure you want to QUIT ?
+						</div>
+						<div style="width:100%;display:inline;padding-top:3vh;">
+							<div class="dialog-button" style="float:left;width:50%;text-align:center;font-size:4vh;font-weight:700;vertical-align:middle;padding-top:5vh;">
+								<a href="javascript:MouseUpCancelQuit();" style="a-hover:none;">
+									<div class="dialog-button-cancel" style="color:white;font-weight:900;font-size:5.5vh;font-family:Arial, Helvetica, sans-serif;letter-spacing:0.07vh;width:24vw;height:13vh;padding-top:1.8vh;margin:auto;text-align:center;vertical-align:middle;background-color:red;border-color:black;border-width:5px;border-style:solid;border-radius:2.5vh;">
+											<!--<img src="images/exit.png" style="width:6vh;height:6vh;border-width:0.3vh;border-style:solid;border-color:black;border-radius:1.25vh;background-color:#eeeeee;" id="closeall" alt="Quit Application" />-->
+											CANCEL
+									</div>
+								</a>
+							</div>
+							<div class="dialog-button" style="float:left;width:50%;text-align:center;vertical-align:middle;padding-top:5vh;">
+								<a href="javascript:MouseUpOKQuit();" style="a-hover:none;">
+									<div class="dialog-button-ok" style="color:white;font-weight:900;font-size:5.5vh;font-family:Arial, Helvetica, sans-serif;letter-spacing:0.07vh;width:24vw;height:13vh;padding-top:1.8vh;margin:auto;text-align:center;vertical-align:middle;background-color:green;border-color:black;border-width:5px;border-style:solid;border-radius:2.5vh;">
+											<!--<img src="images/exit.png" style="width:6vh;height:6vh;border-width:0.3vh;border-style:solid;border-color:black;border-radius:1.25vh;background-color:#eeeeee;" id="closeall" alt="Quit Application" />-->
+											QUIT
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div id="about-box-container" style="z-index:1200;width:100vw;padding:0;margin:0;padding-right:1vw;visibility:hidden;display:none;">
+
+					<div id="about-box-content" style="z-index:1200;position:absolute;width:80vw;height:60vh;right:10vw;bottom:20vh;padding:3vh;background-color:white;border-color:black;border-width:15px;border-style:solid;border-radius:2.5vh;">
+						<div class="dialog-detail" style="text-align:center;font-size:4vh;vertical-align:middle;line-height:4vh;padding-top:1vh;">
+							<strong style="font-weight:700;">"Made Order Advisor" ("M.O.A")</strong><br /><br />
+							v 0.500 (Pre-Release)<br /><br />
+							&#169; Copyright 2015 BizKiwi.NZ<br /><br />
+							For support visit: http://bizkiwi.nz/moa/<br />
+						</div>
+						
+						<div style="width:100%;display:inline;padding-top:3vh;">
+							<div class="dialog-button" style="float:left;width:100%;text-align:center;vertical-align:middle;padding-top:5vh;">
+								<a href="javascript:HideAboutBox();" style="a-hover:none;">
+									<div class="dialog-button-ok" style="color:white;font-weight:900;font-size:5.5vh;font-family:Arial, Helvetica, sans-serif;letter-spacing:0.07vh;width:24vw;height:13vh;padding-top:1.8vh;margin:auto;text-align:center;vertical-align:middle;background-color:green;border-color:black;border-width:5px;border-style:solid;border-radius:2.5vh;">
+											<!--<img src="images/exit.png" style="width:6vh;height:6vh;border-width:0.3vh;border-style:solid;border-color:black;border-radius:1.25vh;background-color:#eeeeee;" id="closeall" alt="Quit Application" />-->
+											OK
+									</div>
+								</a>
+							</div>
+						</div>
+					
+					</div>
+					
+
+						
+				</div>
+				
+				<div id="wrapper" style="z-index:1400;position:relative;top:-55vh;width:30vw;height:39vh;right:45vw;visibility:hidden;display:none;">
+					<div class="dialpad compact" style="z-index:1400;width:30vw;position:absolute;top:0vh;left:0vw;border-width:5px;border-color:red;border-style:solid;">
+						<div class="dials" style="z-index:1400;">
+							<ol>
+								<li class="digits" onclick="PressKey('1');"><p><strong>1</strong></p></li>
+								<li class="digits" onclick="PressKey('2');"><p><strong>2</strong></p></li>
+								<li class="digits" onclick="PressKey('3');"><p><strong>3</strong></p></li>
+								<li class="digits" onclick="PressKey('4');"><p><strong>4</strong></p></li>
+								<li class="digits" onclick="PressKey('5');"><p><strong>5</strong></p></li>
+								<li class="digits" onclick="PressKey('6');"><p><strong>6</strong></p></li>
+								<li class="digits" onclick="PressKey('7');"><p><strong>7</strong></p></li>
+								<li class="digits" onclick="PressKey('8');"><p><strong>8</strong></p></li>
+								<li class="digits" onclick="PressKey('9');"><p><strong>9</strong></p></li>
+								<li class="digits" onclick="PressClear();" style="line-height:10vh;"><p><strong style="font-size:3.5vh;">Clear</strong></p></li>
+								<li class="digits" onclick="PressKey('0');"><p><strong>0</strong></p></li>
+								<li class="digits" onclick="PressDone();" style="line-height:10vh;"><p><strong><span style="font-size:3.5vh;">Done</span></strong></p></li>
+							</ol>
+						</div>
+					</div>
+				</div>
+            </div>
+<!--
+            <div id="crew-footer">
+                <div id="product-brand" style="padding-top:10px;width:20vw;">
+                    <div id="product-brand-logo" style="height: 50%;padding-top:1.5vh;color:white;">order<span style="color:black;">kiwi</span>.nz <span style="font-family: Arial, Tahoma, Geneva, sans-serif; font-size: 1.75vh; font-weight: 700; color: yellow;">v0.301</span></div>
+                    <div style="height: 50%;vertical-align:top;"></div>
+                </div>
+                <div style="width:50vw;float:left;display:inline;">
+                        
+                    <div id="crew-text" style="width:50%;float:left;text-align:right;padding-top:3vh;">
+                        Order #
+                    </div>
+                    <div id="crew-barcode" style="width:17vh;max-width:40%;float:left;">
+                        <form id="barcodeform" name="barcodeform" onsubmit="return false;" action="">
+                            <input type="text" id="barcode" name="barcode" size="4" maxlength="4" style="color:#000000;width:15vh;max-width:90%;float:left;margin-left:1vh;margin-top:1vh;"
+                                    onkeyup="crewWindow.ScanChar('keyboard');"
+                                    onfocus="crewWindow.focusElement = 'barcode';"
+                                    onblur="crewWindow.focusElement = 'none';" onselect="crewWindow.focusElement = 'barcode';" class="number" />
+                        </form>
+                    </div>
+                    <div id="crew-barcode" style="width:10%;float:left;padding-top:2.6%;padding-left:6px;">
+                        <a href="javascript:ToggleNumpad();" style="color:black;font-weight:700;font-family:Arial, Helvetica, sans-serif;">
+                            <img src="images/keypad.png" style="width:6vh;height:6vh;border-width:0.3vh;border-style:solid;border-color:black;border-radius:1.25vh;background-color:#eeeeee;" />
+                        </a>
+                    </div>
+                </div>
+                <div class=" navbar navbar-inverse navbar-fixed-bottom" style="position:relative;float:left;display:block;min-height:10vh;width:27vw;max-width:50vh;background-color:red;border-color:red;">
+                    <div id="crew-spacer" style="float:left;width:5%;">&nbsp;</div>
+                    <div id="crew-clock" style="float:left;width:29%;"></div>
+                    <div class="container" style="z-index:1000;width:38%;float:left;">
+                        
+                        <div class="navbar-header" style="min-height:10vh;float:left;padding-top:0%;width:22%;">
+                            
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="font-size:1.175vh;background-color:#dddddd;float:left;width:6vh;height:6vh;" onclick="ToggleMenuIsOpen();">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span style="padding-top:8px;">MENU</span>
+                            </button>
+                            
+                        </div>
+
+                        <div id="navMenuContents" class="navbar-collapse collapse" style="background-color: white;z-index:1000;width:43.5vh;">
+                            <ul id="navMenuContentsInner" class="nav navbar-nav" style="position: absolute;bottom:11vh;right:1vh;z-index:1000;background-color: white;border-color:red;border-width:5px;border-style:solid;color:red;width:42vh;">
+                                <li>
+                                    <a href="javascript:customerWindow.MinimiseCrewWindow();" style="color:black;font-weight:700;font-size:3vh;font-family:Arial, Helvetica, sans-serif;">
+                                        <img src="images/minimise.png" style="width:6vh;height:6vh;border-width:0.3vh;border-style:solid;border-color:black;border-radius:1.25vh;background-color:#eeeeee;"
+                                             id="minimisecrew" alt="About and Help" />
+                                        &nbsp;About and Help
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:customerWindow.MinimiseCrewWindow();" style="color:black;font-weight:700;font-size:3vh;font-family:Arial, Helvetica, sans-serif;">
+                                        <img src="images/minimise.png" style="width:6vh;height:6vh;border-width:0.3vh;border-style:solid;border-color:black;border-radius:1.25vh;background-color:#eeeeee;"
+                                             id="minimisecrew" alt="Minimise Window" />
+                                        &nbsp;Minimise Window
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:customerWindow.MouseUpCloseAllWindows();" style="color:black;font-weight:700;font-size:3vh;font-family:Arial, Helvetica, sans-serif;">
+                                        <img src="images/exit.png" style="width:6vh;height:6vh;border-width:0.3vh;border-style:solid;border-color:black;border-radius:1.25vh;background-color:#eeeeee;"
+                                             id="closeall" alt="Quit Application" />
+                                        &nbsp;Quit Application
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+						
+                    </div>
+                </div>
+
+            </div>
+			-->
+            
+        </div>
+    </div>
+</div>
+
+<script src="numpad/js/main.js"></script>        
+</body>
+</html>

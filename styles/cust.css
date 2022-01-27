@@ -1,0 +1,326 @@
+﻿/* 
+"Made Order Advisor" ("M.O.A") by BizKiwi.NZ
+Copyright 2015 BizKiwi.NZ - steve.julian@orcon.net.nz
+*/
+
+/*
+#bodycustomer {
+
+}
+*/
+
+#cust-outer-border {
+	width:100vw;
+    height:100vh;
+	background-color:black;
+}
+
+	#cust-left {
+		float:left;
+		width:100vw;
+		background-color:white;
+	}
+
+		#cust-header {
+			float:left;
+			width:100vw;
+			height:16vh;
+			padding-top:0.25vh;
+			background-color:black;
+		}
+
+			#cust-client-brand {
+				float:left;
+				padding-top:2.7vh;
+				padding-left:1vh;
+				width:9vw;
+				height:16vh;
+			}
+			
+				#client-brand-logo {
+					float:left;
+                    height:10vh;
+                    width:14vh;
+					border-width:0vh;
+					border-style:solid;
+					border-color:black;
+					border-radius:1vh;
+				}
+
+			#cust-header-text-wrapper {
+				float:left;
+				width:100vw;
+				height:16vh;
+				padding-left:0vw;
+				-webkit-transform-style: preserve-3d;
+				-moz-transform-style: preserve-3d;
+				transform-style: preserve-3d;
+			}
+
+				#cust-header-text {
+					float:left;
+					width:85vw;
+                    padding-bottom:1.6vh;
+					font-family: Tahoma, Geneva, sans-serif;
+					font-size:5.25vw;
+					font-weight: bold;
+					color:white;
+					text-align:right;
+                    vertical-align:middle;
+					position: relative;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+				
+				#cust-header-arrow-down {
+					float:left;
+					padding-left:2.25vh;
+					padding-top:2.5vh;
+					height:12vh;
+					width:15vw;
+					text-align:center;
+				}
+				
+				    #arrow-down-image {
+					    float:left;
+					    height:9.25vh;
+				    }
+				
+                    /*
+			#cust-cobrand {
+				float:right;
+				padding-top:2.7vh;
+				padding-right:1vh;
+				width:9vw;
+				height:16vh;
+			}
+			
+				#cobrand-logo {
+					float:right;
+                    height:10vh;
+                    width:14vh;
+					border-width:0vh;
+					border-style:solid;
+					border-color:black;
+					border-radius:1vh;
+				}
+*/
+
+		#cust-orders {
+			display:block;
+			float:left;
+			width:100vw;
+			height:68vh;
+            padding-left:1vw;
+            padding-top:0.75vh;
+            /*
+                padding-left:0vw;
+            */
+			background-color:#999999;
+		}
+
+
+                .tileoff {
+                    visibility:hidden;
+                    display:none;
+				    float:left;
+                    /*
+				    width:16.5vw;
+				    height:20.75vh;
+				    padding-top:2vh;
+                    padding-left:1.5vh;
+                    */
+                    width:0vw;
+				    height:0vh;
+				    padding-top:0vh;
+                    padding-left:0vw;
+			    }
+
+                .tileon {
+                    visibility:visible;
+                    display:inline;
+				    float:left;
+                    /*
+				    width:16.5vw;
+				    height:20.75vh;
+                    */
+                    /*
+				    padding-top:3vh;
+                    padding-left:1.5vh;
+                    */
+			    }
+
+                    .orderbg {
+                        /*
+					    width:15vw;
+					    height:18.75vh;
+                        */
+					    -webkit-transform-style: preserve-3d;
+					    -moz-transform-style: preserve-3d;
+					    transform-style: preserve-3d;
+					    background-color:black;
+					    border-width:0.3vh;
+					    border-style:solid;
+					    border-color:black;
+                        border-radius:1.75vh;
+                        /*
+					    border-radius:3.75vh;
+                        */
+				    }
+
+					.order {
+						font-family: Arial, Tahoma, Geneva, sans-serif;
+						/*font-size:6.5vw;*/
+						font-weight: bold;
+						color:white;
+						text-align:center;
+						position: relative;
+						top: 50%;
+						transform: translateY(-50%);
+					}
+
+                    /*
+        #cust-content-outer {
+            display:block;
+			float:left;
+            width:100vw;
+            padding:0;
+            margin:0;
+			height:45.5vh;
+			background-color:white;
+            overflow:hidden;
+		}
+
+            #cust-content {
+                display:block;
+                width:100%;
+			    height:auto;
+			    background-color:white;
+                padding:0;
+                margin:0;
+		    }
+
+                #slider1 {
+                    float:left;
+                    width:100%;
+                    height:auto;
+                    visibility:visible;
+                    display:block;
+                }
+
+                #slider2 {
+                    float:left;
+                    width:0vw;
+                    height:0;
+                    visibility:hidden;
+                    display:none;
+                }
+
+				    .mySlide {
+                        display:block;
+                        width:100%;
+                        height:auto;
+                        margin:0;
+                        padding:0;
+				    }
+
+                        .slideImage {
+                            height:auto;
+                            padding:0;
+                            margin:0;
+                        }
+                        */
+
+		#cust-footer {
+			float:left;
+			width:100vw;
+			height:16vh;
+			background-color:black;
+			-webkit-transform-style: preserve-3d;
+			-moz-transform-style: preserve-3d;
+			transform-style: preserve-3d;
+		}
+
+			#cust-footer-text-01 {
+				float:left;
+				font-family: Tahoma, Geneva, sans-serif;
+				font-size:5.25vw;
+				font-weight: bold;
+				color:#eeeeee;
+				text-align:right;
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+				width:85vw;
+			}
+
+			#cust-footer-arrow-up {
+				float:left;
+                padding-left:2.25vh;
+				padding-top:3.6vh;
+				height:12vh;
+				width:15vw;
+				text-align:center;
+			}
+			
+				#arrow-up-image {
+					height:9.25vh;
+					float:left;
+				}
+					
+					
+                /*
+			#cust-footer-text-02 {
+				float:left;
+				font-family: Tahoma, Geneva, sans-serif;
+				font-size:2.5vw;
+				font-weight: bold;
+				color:#eeeeee;
+				text-align:center;
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+				width:35.25vw;
+			}
+			
+            #cust-qrcode-image {
+				float:right;
+				padding-top:1.2vh;
+				padding-bottom:1.75vh;
+				padding-right:1.2vh;
+				width:8.25vw;
+				height:16vh;
+			}
+
+            	#cust-qrcode-svg {
+					border-width:0vh;
+					border-color:red;
+					border-style:none;
+					float:right;
+					background-color:white;
+					width:12.5vh;
+					height:12.5vh;
+					padding:0.5vh;
+				}
+
+                	#qrcode {
+						width:10.5vh;
+						height:10.5vh;
+						padding:0;
+					}
+
+			#cust-footer-arrow-right {
+				float:right;
+				padding-right:0vh;
+				padding-top:3.3vh;
+				width:8.5vw;
+				height:16vh;
+				text-align:center;
+			}
+			
+				#arrow-right-image {
+
+					height:9.25vh;
+				}
+
+                */

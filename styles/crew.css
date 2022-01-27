@@ -1,0 +1,423 @@
+/* 
+"Made Order Advisor" ("M.O.A") by BizKiwi.NZ
+Copyright 2015 BizKiwi.NZ - steve.julian@orcon.net.nz
+*/
+
+#contentcrew {
+	width:100%;
+    margin-top:0vh;
+    padding-top:0vh;
+    background-color:red;
+    padding:0;
+    overflow:hidden;
+    border-bottom-width:5px;
+    border-color:red;
+    border-style:solid;
+}
+
+	#crew-panel2 {
+		float:right;
+		width:100%;
+        height:100vh;
+        overflow:hidden;
+
+	}
+
+        #crew-panel2-inner {
+		    background-color:white;
+            height:100%;
+            padding:0;
+            overflow:hidden;
+	    }
+
+		    #crew-header {
+			    float:left;
+			    width:100%;
+			    height:12vh;
+			    padding-top:0;
+			    background-color:red;
+                overflow:hidden;
+				display:inline;
+		    }
+		
+/*
+
+			    #crew-client-brand {
+				    float:left;
+				    padding-top:2.7vh;
+				    padding-left:1%;
+				    width:9vw;
+				    height:12vh;
+			    }
+			
+				    #crew-brand-logo {
+					    float:left;
+					    height:10vh;
+                        width:14vh;
+					    border-width:0vh;
+					    border-style:solid;
+					    border-color:black;
+					    border-radius:1vh;
+				    }
+					*/
+				#product-brand {
+					float:left;
+					padding-top:2.7vh;
+					padding-left:0;
+					width:9vw;
+					height:12vh;
+					display:inline;
+				}
+
+					#product-brand-logo {
+						height:3vh;
+						font-family: Trebuchet, Arial, Tahoma, Geneva, sans-serif;
+						font-size:2.25vh;
+						font-weight:700;
+						letter-spacing:1px;
+						color:white;
+
+						float:left;
+						text-align:center;
+						vertical-align:middle;
+					}
+
+					#product-brand-version {
+						height:4vh;
+						font-family: Arial, Tahoma, Geneva, sans-serif;
+						font-size:2vh;
+						font-weight:700;
+						color:white;
+
+						float:left;
+						text-align:center;
+						vertical-align:middle;
+						margin:auto;
+					}
+
+                
+			    #crew-header-text-wrapper {
+				    float:right;
+				    width:91vw;
+				    height:12vh;
+					display:inline;
+				    padding-left:0;
+				    -webkit-transform-style: preserve-3d;
+				    -moz-transform-style: preserve-3d;
+				    transform-style: preserve-3d;
+			    }
+						
+				    #crew-header-text {
+					    float:left;
+					    width:68.5vw;
+					    font-family: Tahoma, Geneva, sans-serif;
+					    font-size:4.5vh;
+					    font-weight: bold;
+					    color:white;
+					    text-align:right;
+					    position: relative;
+					    top: 50%;
+					    transform: translateY(-50%);
+				    }
+
+                	#crew-header-arrow-down {
+						float:left;
+						padding-left:2.25vh;
+						padding-top:2.75vh;
+						height:12vh;
+						width:18vw;
+						text-align:center;
+				    }
+				
+				        #arrow-down-image {
+					        float:left;
+                            width:6.5vh;
+				        }
+
+
+                #crew-cobrand {
+				    float:left;
+				    padding-top:2.7vh;
+				    width:16vh;
+				    height:12vh;
+			    }
+			
+				    #cobrand-logo {
+					    float:right;
+                        width:14vh;
+					    height:10vh;
+					    border-width:0vh;
+					    border-style:solid;
+					    border-color:black;
+					    border-radius:1vh;
+				    }
+
+                #crew-orders {
+			        display:inline;
+			        float:left;
+			        width:100%;
+			        height:76vh;
+                    z-index:1;
+			        background-color:white;
+                    padding-top:1.28vh;
+                    padding-left:0vw;
+                    background-color:#999999;
+		        }
+
+                    .tileoff {
+                        visibility:hidden;
+                        display:none;
+				        float:left;
+                        /*
+				        width:16.25vw;
+				        height:21.75vh;
+                        */
+				        padding-top:1.5vh;
+                        padding-left:1.5%;
+			        }
+
+                    .tileon {
+                        visibility:visible;
+                        display:inline;
+				        float:left;
+                        /*
+				        width:16.25vw;
+				        height:21.75vh;
+                        */
+				        padding-top:1.5vh;
+                        padding-left:1.5%;
+			        }
+
+                        .orderbg {
+					        /*
+                            width:15vw;
+					        height:19.75vh;
+                            */
+                            display:block;
+					        -webkit-transform-style: preserve-3d;
+					        -moz-transform-style: preserve-3d;
+					        transform-style: preserve-3d;
+					        background-color:red;
+					        border-width:1vh;
+					        border-style:solid;
+					        border-color:black;
+					        border-radius:5vh;
+				        }
+
+
+                            .orderouter {
+						        font-family: Arial, Tahoma, Geneva, sans-serif;
+						        /*
+						        font-size:6.5vh;
+                                */
+                                -webkit-transform-style: preserve-3d;
+					            -moz-transform-style: preserve-3d;
+					            transform-style: preserve-3d;
+                                width:100%;
+                                float:left;
+						        font-weight: bold;
+						        color:white;
+						        text-align:center;
+                                vertical-align:middle;
+						        /*position: relative;
+						        top: 35%;
+						        transform: translateY(-50%);
+                                */
+					        }
+
+					            .order {
+						            font-family: Arial, Tahoma, Geneva, sans-serif;
+						            /*
+						            font-size:6.5vh;
+                                    */
+                                    width:100%;
+                                    float:left;
+						            font-weight: bold;
+						            color:white;
+						            text-align:center;
+                                    vertical-align:top;
+						            position: relative;
+						            /*top: 75%;*/
+						            transform: translateY(-10%);
+                                    
+					            }
+
+
+                            .timer {
+						        font-family: Arial, Tahoma, Geneva, sans-serif;
+						        /*
+                                    font-size:3.5vh;
+                                */
+								
+                                width:100%;
+                                float:left;
+						        font-weight: bold;
+						        color:yellow;
+						        text-align:center;
+                                vertical-align:middle;
+						        position: relative;
+                                /*
+						        padding-top: 65%;*/
+						        transform: translateY(16.5%);
+					        }
+
+            #crew-footer {
+			    float:left;
+			    width:100vw;
+			    height:12vh;
+                border-style:solid;
+                border-width:0px;
+                border-color:red;
+                padding:0px;
+                margin:0px;
+                background-color:red;
+                /*
+			    -webkit-transform-style: preserve-3d;
+			    -moz-transform-style: preserve-3d;
+			    transform-style: preserve-3d;
+                    */
+		    }
+
+            	#crew-footer-text-wrapper {
+				    float:left;
+
+				    height:16vh;
+				    padding-top:1.75vh;
+                    background-color:red;
+				    -webkit-transform-style: preserve-3d;
+				    -moz-transform-style: preserve-3d;
+				    transform-style: preserve-3d;
+			    }
+			
+				    #crew-brand {
+					    float:left;
+
+					    font-family: Tahoma, Geneva, sans-serif;
+					    font-size:4vw;
+					    font-weight: bold;
+					    color:white;
+					    text-align:center;
+					    position: relative;
+					    top: 50%;
+					    transform: translateY(-50%);
+				    }
+
+
+
+					#partner-brand {
+                        height:10vh;
+
+                        float:left;
+                        padding-top:2vh;
+                    }
+					
+                        #partner-brand-logo {
+					        height:3vh;
+                            font-family: Trebuchet, Arial, Tahoma, Geneva, sans-serif;
+					        font-size:2.25vh;
+                            font-weight:700;
+                            letter-spacing:1px;
+                            color:white;
+
+                            float:left;
+                            text-align:center;
+                            vertical-align:middle;
+				        }
+
+                        #partner-brand-version {
+                            height:4vh;
+                            font-family: Arial, Tahoma, Geneva, sans-serif;
+					        font-size:2vh;
+                            font-weight:700;
+                            color:white;
+
+                            float:left;
+                            text-align:center;
+                            vertical-align:middle;
+                            margin:auto;
+                        }
+						
+                        #crew-text {
+					        float:left;
+                            padding-right:1vh;
+					        padding-top:2vh;
+					        height:12vh;
+					        font-family: Tahoma, Geneva, sans-serif;
+					        font-size:1.8vw;
+					        font-weight: bold;
+					        color:white;
+					        text-align:right;
+				        }
+
+                        
+				        #crew-barcode {
+					        height:6vh;
+					        float:left;
+                            padding-left:0;
+                            padding-top:1vh;
+                            padding-bottom:1vh;
+					        padding-right:1vh;
+				        }
+
+                             #barcode {
+                                font-size:2.5em;
+                                width:8vh;
+                                height:6vh;
+                                border-radius:0.75vh;
+                                padding-left:0.6vh;
+                                
+				            }
+				
+                             /*
+				        #crew-keypad-button {
+					        width:10%;
+					        float:left;
+					        padding-top:0vh;
+					        padding-left:0;
+					        padding-right:6%;
+				        }
+				
+				        #crew-exit-button {
+					        width:10%;
+					        float:left;
+					        padding-left:0;
+				        }
+                                 */
+
+    #crew-panel1 {
+		float:left;
+		width:0%;
+        height:100vh;
+        visibility:hidden;
+        display:none;
+        overflow:hidden;
+        border-right-width:5px;
+        border-bottom-width:5px;
+        border-color:red;
+        border-style:solid;
+        overflow:hidden;
+        background-color:red;
+        padding-bottom:5px;
+	}
+
+        #crew-panel1-inner {
+		    background-color:white;
+            height:100%;
+            overflow:hidden;
+	    }
+
+        #crew-spacer {
+
+            float:left;
+        }
+
+        #crew-clock {
+            color:white;
+            font-family:Tahoma, Arial, sans-serif;
+            font-weight:700;
+            font-size:3.3vh;
+            float:left;
+            padding-top:1.85vh;
+
+            text-align:left;
+        }
