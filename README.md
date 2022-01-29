@@ -5,7 +5,7 @@
 Made Order Advisor (MOA) is a static multi-display touchscreen app used in the hospitality industry to advise customers their order is ready to collect.
 
 
-**Installation and Setup*
+**Installation and Setup**
 
 1. Ensure a second display is connected to the PC and working properly as the right most screen of an extended desktop. The main display (i.e. with Start menu / taskbar) should be on the left of the extended desktop.
 
