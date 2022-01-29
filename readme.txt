@@ -36,10 +36,3 @@ Installation and Setup Notes:
 
 14. Relaunch the Application (e.g. via shortcut on desktop / taskbar shortcut and rebooting the PC) to check to ensure the 2 browser windows open on the correct displays.
 
-
-For support requests or any feedback / suggestions please contact:
-
-Steve Julian 
-Email: steve.julian@centroid.kiwi
-Mobile: 022 360 1234
-
