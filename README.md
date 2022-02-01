@@ -2,7 +2,7 @@
 
 ## Introduction ##
 
-**This project is a responsive static multi-display standalone touchscreen web application. 
+**This project software is a responsive static multi-display standalone touchscreen web application. 
 It is used in the hospitality industry to advise customers their order is ready to collect.**
 
 **Made Order Advisor (MOA) is published under the [MIT License](https://choosealicense.com/licenses/mit/)**.
