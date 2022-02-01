@@ -1,6 +1,6 @@
 # Made Order Advisor (MOA) v 0.500 (Prerelease)
 
-**Introduction**
+## Introduction ##
 
 **This project is a responsive static multi-display standalone touchscreen web application. 
 It is used in the hospitality industry to advise customers their order is ready to collect.**
